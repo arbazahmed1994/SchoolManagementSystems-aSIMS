@@ -1,0 +1,40 @@
+﻿@model IEnumerable<aSIMS.Models.NavbarItem>
+
+<!-- sidebar menu -->
+<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+    <div class="menu_section">
+        @*<h3>General</h3>*@
+        <ul class="nav side-menu">
+            @foreach (var item in Model)
+            {
+                if (item.ParentID == 0)
+                {
+                    if (item.IsParent == 0)
+                    {
+                        <li><a href="@Url.Action(item.ActionName, item.ControllerName)"><i class="@item.Icon"></i>@item.LinkText</a></li>
+                    }
+                    else
+                    {
+                        <li><a><i class="@item.Icon"></i>@item.LinkText <span class="fa fa-chevron-down"></span></a>
+                            <ul class="nav child_menu">
+                                @foreach (var itm in Model)
+                                {
+                                    if (itm.ParentID == item.MenuID)
+                                    { 
+                                    <li><a href="@Url.Action(itm.ActionName, itm.ControllerName)">@itm.LinkText</a></li>
+                                    }
+                                }
+
+                            </ul>
+
+                        </li>
+                    }
+                }
+            }
+        </ul>
+    </div>
+</div>
+<!-- /sidebar menu -->
+
+
+

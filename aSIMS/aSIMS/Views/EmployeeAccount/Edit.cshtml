@@ -1,0 +1,156 @@
+﻿@model aSIMS.Models.EmployeeAccountModel
+
+@{
+    ViewBag.Title = "Employee Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    
+    @Html.HiddenFor(model => model.UserID)
+    <div class="col-md-7 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>@ViewBag.Main<small>@ViewBag.Sub</small></h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <br />
+                <form class="form-horizontal form-label-left">
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.UserName)
+                        <span class="required">*</span>
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.UserName)
+                        @Html.ValidationMessageFor(model => model.UserName)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Password)
+                        <span class="required">*</span>
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Password)
+                        @Html.ValidationMessageFor(model => model.Password)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.FullName)
+                        <span class="required">*</span>
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.FullName)
+                        @Html.ValidationMessageFor(model => model.FullName)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.EmailAddress)
+                        <span class="required">*</span>
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.EmailAddress)
+                        @Html.ValidationMessageFor(model => model.EmailAddress)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Address)
+                        <span class="required">*</span>
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Address)
+                        @Html.ValidationMessageFor(model => model.Address)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.DateOfBirth)
+                        <span class="required">*</span>
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.DateOfBirth, "{0:d}")
+                        @Html.ValidationMessageFor(model => model.DateOfBirth)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.CNIC)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.CNIC)
+                        @Html.ValidationMessageFor(model => model.CNIC)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Phone)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Phone)
+                        @Html.ValidationMessageFor(model => model.Phone)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Mobile)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Mobile)
+                        @Html.ValidationMessageFor(model => model.Mobile)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.RoleID)
+                        <span class="required">*</span>
+                    </div>
+                    <div class="editor-field">
+                        @Html.DropDownListFor(model => model.RoleID, Model.RoleList)
+                        @Html.ValidationMessageFor(model => model.RoleID)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.GenderID)
+                        <span class="required">*</span>
+                    </div>
+                    <div class="editor-field">
+                        @Html.DropDownListFor(model => model.GenderID, Model.GenderList)
+                        @Html.ValidationMessageFor(model => model.GenderID)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.CityID)
+                        <span class="required">*</span>
+                    </div>
+                    <div class="editor-field">
+                        @Html.DropDownListFor(model => model.CityID, Model.CityList)
+                        @Html.ValidationMessageFor(model => model.CityID)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.DesignationID)
+                        <span class="required">*</span>
+                    </div>
+                    <div class="editor-field">
+                        @Html.DropDownListFor(model => model.DesignationID, Model.DesignationList)
+                        @Html.ValidationMessageFor(model => model.DesignationID)
+                    </div>
+
+                    <div class="form-group" align="right">
+                        <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                            <button type="submit" class="btn btn-primary" onclick="">Update</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+       
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

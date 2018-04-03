@@ -1,0 +1,95 @@
+﻿@model aSIMS.ViewModel.CredentialsViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>aSIMS | Login</title>
+    <!-- Bootstrap -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="../vendors/animate.css/animate.min.css" rel="stylesheet">
+    <link href="~/StyleSheet.css" rel="stylesheet" />
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.min.css" rel="stylesheet">
+</head>
+
+<body class="login">
+    <div>
+        <a class="hiddenanchor" id="signup"></a>
+        <a class="hiddenanchor" id="signin"></a>
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+
+            <div class="login_wrapper">
+                <div class="animate form login_form">
+                    <section class="login_content">
+                        <form>
+                            <h1>Login Form</h1>
+
+                            <div class="text-margin">
+                                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { placeholder = "Username" } })
+                                @Html.ValidationMessageFor(model => model.Username)
+                            </div>
+
+                            <div class="text-margin">
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { placeholder = "Password" } })
+                                @Html.ValidationMessageFor(model => model.Password)
+                            </div>
+                            <div class="text-margin">
+                                 @Html.DropDownListFor(model => model.UserTypeID, Model.UserTypeList)
+                                @Html.ValidationMessageFor(model => model.UserTypeID)
+                            </div>
+
+                            <div>
+                                <button class="btn btn-default submit">Sign In</button>
+                                <a class="reset_pass" href="#">Lost your password?</a>
+                            </div>
+                            @*@TempData["LoginError"].ToString()*@
+                            <div class="clearfix"></div>
+
+                            <div class="separator">
+                                <div class="clearfix"></div>
+                                <br />
+
+                                <div>
+                                    <h1><i class="fa fa-mortar-board" style="font-size: 30px"></i>&nbsp a S I M S</h1>
+                                    <p>©2018 All Rights Reserved. <a><b>aSIMS</b></a> | Privacy and Terms</p>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        }
+
+    </div>
+
+    <!-- jQuery -->
+    <script src="~/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="~/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="~/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="~/vendors/nprogress/nprogress.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="~/build/js/custom.min.js"></script>
+    <script>
+        $("input").addClass("form-control");
+        $("select").addClass("form-control");
+    </script>
+
+</body>
+</html>

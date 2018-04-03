@@ -1,0 +1,73 @@
+﻿@model aSIMS.Models.SectionsModel
+
+@{
+    ViewBag.Title = "Update Section";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>@ViewBag.Main <small>@ViewBag.Sub</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <br />
+                    <form id="demo-form2" class="form-horizontal form-label-left">
+
+                        @Html.HiddenFor(model => model.SectionID)
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.SectionName)
+                            <span class="required">*</span>
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.SectionName)
+                            @Html.ValidationMessageFor(model => model.SectionName)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.ClassID)
+                            <span class="required">*</span>
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownListFor(model => model.ClassID, Model.ClassList)
+                            @Html.ValidationMessageFor(model => model.ClassID)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.TeacherID)
+                            <span class="required">*</span>
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownListFor(model => model.TeacherID, Model.TeacherList)
+                            @Html.ValidationMessageFor(model => model.TeacherID)
+                        </div>
+
+                        <div class="form-group" align="right">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

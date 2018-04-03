@@ -1,0 +1,45 @@
+﻿.text-margin {
+    margin-bottom: 10px;
+}
+
+.textbox-field {
+    margin: 10px 0px !important;
+}
+.label-field {
+    margin-top: 15px !important;
+}
+
+.custom-alert {
+    position: fixed;
+    z-index: 8888;
+    right: 20px;
+    bottom: 30px;
+}
+
+.editor-field > span {
+    color: red !important;
+    font-size: 10px !important;
+    position: absolute !important;
+}
+
+.create-notification {
+    padding: 10px;
+    background: #0eb3d845;
+    border-radius: 3px;
+    margin-top: 5px;
+    text-align: -webkit-auto;
+}
+    .create-notification > p {
+        color: #0d7fb3;
+    }
+
+.create-full-notification {
+    padding: 10px;
+    background: #0eb3d845;
+    border-radius: 3px;
+    margin: 14px;
+    text-align: -webkit-auto;
+}
+    .create-full-notification > p {
+        color: #0d7fb3;
+    }

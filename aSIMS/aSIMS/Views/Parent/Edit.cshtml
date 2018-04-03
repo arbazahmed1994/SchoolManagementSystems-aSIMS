@@ -1,0 +1,104 @@
+﻿@model aSIMS.Models.ParentModel
+
+@{
+    ViewBag.Title = "Update Parent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>@ViewBag.Main <small>@ViewBag.Sub</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <br />
+                    <form id="demo-form2" class="form-horizontal form-label-left">
+
+                        @Html.HiddenFor(model => model.ParentID)
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.ParentName)
+                            <span class="required">*</span>
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.ParentName)
+                            @Html.ValidationMessageFor(model => model.ParentName)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Email)
+                            <span class="required">*</span>
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Email)
+                            @Html.ValidationMessageFor(model => model.Email)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Password)
+                            <span class="required">*</span>
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Password)
+                            @Html.ValidationMessageFor(model => model.Password)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Phone)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Phone)
+                            @Html.ValidationMessageFor(model => model.Phone)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Mobile)
+                            <span class="required">*</span>
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Mobile)
+                            @Html.ValidationMessageFor(model => model.Mobile)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Address)
+                            <span class="required">*</span>
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Address)
+                            @Html.ValidationMessageFor(model => model.Address)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Profession)
+                            <span class="required">*</span>
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Profession)
+                            @Html.ValidationMessageFor(model => model.Profession)
+                        </div>
+                        <div class="form-group" align="right">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
