@@ -124,11 +124,38 @@ namespace aSIMS {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Discription.
+        /// </summary>
+        public static string Discription {
+            get {
+                return ResourceManager.GetString("Discription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date Of Birth.
         /// </summary>
         public static string DOB {
             get {
                 return ResourceManager.GetString("DOB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Driver CNIC.
+        /// </summary>
+        public static string DriverCNIC {
+            get {
+                return ResourceManager.GetString("DriverCNIC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Driver Mobile.
+        /// </summary>
+        public static string DriverMobile {
+            get {
+                return ResourceManager.GetString("DriverMobile", resourceCulture);
             }
         }
         
@@ -174,6 +201,15 @@ namespace aSIMS {
         public static string Mobile {
             get {
                 return ResourceManager.GetString("Mobile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number Of Vehicle.
+        /// </summary>
+        public static string NumberOfVehicle {
+            get {
+                return ResourceManager.GetString("NumberOfVehicle", resourceCulture);
             }
         }
         
@@ -232,6 +268,24 @@ namespace aSIMS {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Route Area.
+        /// </summary>
+        public static string RouteArea {
+            get {
+                return ResourceManager.GetString("RouteArea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Route Fare.
+        /// </summary>
+        public static string RouteFare {
+            get {
+                return ResourceManager.GetString("RouteFare", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Section Name.
         /// </summary>
         public static string SectionName {
@@ -259,6 +313,15 @@ namespace aSIMS {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Transport Name.
+        /// </summary>
+        public static string TransportName {
+            get {
+                return ResourceManager.GetString("TransportName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Username.
         /// </summary>
         public static string UserName {
@@ -273,6 +336,15 @@ namespace aSIMS {
         public static string UserType {
             get {
                 return ResourceManager.GetString("UserType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vehicle Number.
+        /// </summary>
+        public static string VehicleNumber {
+            get {
+                return ResourceManager.GetString("VehicleNumber", resourceCulture);
             }
         }
     }

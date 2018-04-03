@@ -1,0 +1,68 @@
+﻿@model IEnumerable<aSIMS.Models.TransportModel>
+
+@{
+    ViewBag.Title = "Transport List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>@ViewBag.Main<small>@ViewBag.Sub</small></h2>
+            <ul class="nav navbar-right panel_toolbox">
+                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+
+            <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TransportName)
+                        </th>
+                        <td>
+                            @Html.DisplayNameFor(model => model.VehicleNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(model => model.DriverCNIC)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(model => model.DriverMobile)
+                        </td>
+                        <th style="width: 10rem;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            @Html.HiddenFor(modelItem => item.TransportID)
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TransportName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.VehicleNumber)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DriverCNIC)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DriverMobile)
+                            </td>
+                            <td style="width: 10rem;">
+                                @Html.ActionLink("Edit", "Edit", new { id = item.TransportID }) |
+                                <a href="@Url.Action("Delete","Transport", new { id = item.TransportID })" onclick="return confirm('Do you really want to DELETE this Entry')">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

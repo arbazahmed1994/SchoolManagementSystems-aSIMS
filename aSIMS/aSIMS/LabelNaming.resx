@@ -189,4 +189,28 @@
   <data name="SectionName" xml:space="preserve">
     <value>Section Name</value>
   </data>
+  <data name="Discription" xml:space="preserve">
+    <value>Discription</value>
+  </data>
+  <data name="DriverCNIC" xml:space="preserve">
+    <value>Driver CNIC</value>
+  </data>
+  <data name="NumberOfVehicle" xml:space="preserve">
+    <value>Number Of Vehicle</value>
+  </data>
+  <data name="RouteFare" xml:space="preserve">
+    <value>Route Fare</value>
+  </data>
+  <data name="TransportName" xml:space="preserve">
+    <value>Transport Name</value>
+  </data>
+  <data name="VehicleNumber" xml:space="preserve">
+    <value>Vehicle Number</value>
+  </data>
+  <data name="DriverMobile" xml:space="preserve">
+    <value>Driver Mobile</value>
+  </data>
+  <data name="RouteArea" xml:space="preserve">
+    <value>Route Area</value>
+  </data>
 </root>

@@ -75,6 +75,25 @@ CREATE TABLE EmployeeAccount(
 )
 GO
 
+CREATE TABLE Transport (
+	TransportID INT IDENTITY(1,1) NOT NULL,
+	TransportName VARCHAR(50) NOT NULL,
+	RouteArea VARCHAR(100) NULL,
+	NumberOfVehicle INT NOT NULL,
+	VehicleNumber VARCHAR(20) NOT NULL,
+	DriverCNIC VARCHAR(20) NOT NULL,
+	DriverMobile VARCHAR(20) NOT NULL,
+	RouteFare FLOAT NULL,
+	Description VARCHAR(200) NULL,
+	EntryUser INT NOT NULL,
+	EntryDate DATE NOT NULL,
+	UpdateUser INT NULL,
+	UpdateDate DATE NULL,
+	IsDeleted BIT NOT NULL,
+	CONSTRAINT PK_Transport PRIMARY KEY CLUSTERED (TransportID)
+)
+GO
+
 CREATE TABLE Navbar(
 	MenuID INT NOT NULL,
 	LinkText VARCHAR(50) NOT NULL,
@@ -160,8 +179,36 @@ CREATE TABLE Sections(
 	SectionName VARCHAR(5) NOT NULL,
 	ClassID INT NOT NULL,
 	TeacherID INT,
-	CONSTRAINT PK_Sections PRIMARY KEY CLUSTERED (ClassID),
+	CONSTRAINT PK_Sections PRIMARY KEY CLUSTERED (SectionID),
 	CONSTRAINT FK_Sections_TeacherID FOREIGN KEY(TeacherID) REFERENCES Teachers(TeacherID),
 	CONSTRAINT FK_Sections_ClassID FOREIGN KEY(ClassID) REFERENCES Classes(ClassID)
+)
+GO
+
+CREATE TABLE Students (
+	StudentID INT IDENTITY(1,1) NOT NULL,
+	StudentName VARCHAR(5) NOT NULL,
+	RollNumber VARCHAR(10) NOT NULL,
+	ParentID INT NOT NULL,
+	SectionID INT NOT NULL,
+	DateOfBirth DATE NOT NULL,
+	GenderID INT NOT NULL,
+	Address VARCHAR(200) NULL,
+	Phone VARCHAR(50) NULL,
+	Email VARCHAR(50) NULL,
+	TransportID INT NOT NULL,
+	Photo NVARCHAR(MAX) NULL,
+	EntryUser INT NOT NULL,
+	EntryDate DATE NOT NULL,
+	UpdateUser INT NULL,
+	UpdateDate DATE NULL,
+	IsDeleted BIT NOT NULL,
+	IsPassOut BIT NOT NULL,
+	ISDropOut BIT NOT NULL,
+	CONSTRAINT PK_Students PRIMARY KEY CLUSTERED (StudentID),
+	CONSTRAINT FK_Students_SectionID FOREIGN KEY(SectionID) REFERENCES Sections(SectionID),
+	CONSTRAINT FK_Students_GenderID FOREIGN KEY(GenderID) REFERENCES Gender(GenderID),
+	CONSTRAINT FK_Students_TransportID FOREIGN KEY(TransportID) REFERENCES Transport(TransportID),
+	CONSTRAINT FK_Students_ParentID FOREIGN KEY(ParentID) REFERENCES Parents(ParentID)
 )
 GO

@@ -1,0 +1,109 @@
+﻿@model aSIMS.Models.TransportModel
+
+@{
+    ViewBag.Title = "Update Transport";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+       
+    <div class="col-md-7 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>@ViewBag.Main<small>@ViewBag.Sub</small></h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <br />
+                <form class="form-horizontal form-label-left">
+
+                    @Html.HiddenFor(model => model.TransportID)
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.TransportName)
+                        <span class="required">*</span>
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.TransportName)
+                        @Html.ValidationMessageFor(model => model.TransportName)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.VehicleNumber)
+                        <span class="required">*</span>
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.VehicleNumber)
+                        @Html.ValidationMessageFor(model => model.VehicleNumber)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.DriverCNIC)
+                        <span class="required">*</span>
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.DriverCNIC)
+                        @Html.ValidationMessageFor(model => model.DriverCNIC)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.DriverMobile)
+                        <span class="required">*</span>
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.DriverMobile)
+                        @Html.ValidationMessageFor(model => model.DriverMobile)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.RouteFare)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.RouteFare)
+                        @Html.ValidationMessageFor(model => model.RouteFare)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.RouteArea)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.RouteArea)
+                        @Html.ValidationMessageFor(model => model.RouteArea)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.NumberOfVehicle)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.NumberOfVehicle)
+                        @Html.ValidationMessageFor(model => model.NumberOfVehicle)
+                    </div>
+
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.Description)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.Description)
+                        @Html.ValidationMessageFor(model => model.Description)
+                    </div>
+
+                    <div class="form-group" align="right">
+                        <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                            <button type="submit" class="btn btn-primary" onclick="">Update</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
