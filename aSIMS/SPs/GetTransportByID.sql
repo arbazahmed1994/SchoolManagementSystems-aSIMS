@@ -23,6 +23,7 @@ BEGIN
 	FROM 
 		Transport
 	WHERE
-		TransportID = @TransportID
+		TransportID = @TransportID AND
+		IsDeleted = 0
 
 END

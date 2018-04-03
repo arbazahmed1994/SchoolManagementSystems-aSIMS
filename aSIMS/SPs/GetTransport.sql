@@ -20,5 +20,7 @@ BEGIN
 		Description
 	FROM 
 		Transport
+	WHERE
+		IsDeleted = 0
 
 END

@@ -1,0 +1,133 @@
+﻿@model aSIMS.Models.StudentModel
+
+@{
+    ViewBag.Title = "Create Student";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+
+    <div class="row">
+        <div class="col-md-7 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>@ViewBag.Main<small>@ViewBag.Sub</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <br />
+                    <form class="form-horizontal form-label-left">
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.StudentName)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.StudentName)
+                            @Html.ValidationMessageFor(model => model.StudentName)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.RollNumber)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.RollNumber)
+                            @Html.ValidationMessageFor(model => model.RollNumber)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.DateOfBirth)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.DateOfBirth)
+                            @Html.ValidationMessageFor(model => model.DateOfBirth)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Phone)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Phone)
+                            @Html.ValidationMessageFor(model => model.Phone)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Email)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Email)
+                            @Html.ValidationMessageFor(model => model.Email)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Address)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Address)
+                            @Html.ValidationMessageFor(model => model.Address)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.ParentID)
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownListFor(model => model.ParentID, Model.ParentList)
+                            @Html.ValidationMessageFor(model => model.ParentID)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.SectionID)
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownListFor(model => model.SectionID, Model.SectionList)
+                            @Html.ValidationMessageFor(model => model.SectionID)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.GenderID)
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownListFor(model => model.GenderID, Model.GenderList)
+                            @Html.ValidationMessageFor(model => model.GenderID)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.TransportID)
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownListFor(model => model.TransportID, Model.TransportList)
+                            @Html.ValidationMessageFor(model => model.TransportID)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Photo)
+                        </div>
+                        <div class="editor-field">
+                            @Html.EditorFor(model => model.Photo)
+                            @Html.ValidationMessageFor(model => model.Photo)
+                        </div>
+
+                        <div class="form-group" align="right">
+                            <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+                                <button type="submit" class="btn btn-success" onclick="">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="create-notification col-md-5 col-xs-12">
+            <h4>Student Admission Notes</h4>
+            <p>
+                Admitting new students will automatically create an enrollment to the selected class in the running session. Please check and recheck the informations you have inserted because once you admit new student, you won't be able to edit his/her class,roll,section without promoting to the next session.
+            </p>
+        </div>
+    </div>
+}
+

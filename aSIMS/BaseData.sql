@@ -48,6 +48,13 @@ VALUES (16,'Transport' , '' , '' , 'fa fa-bus' , NULL , 1 , 1 , 6)
 	INSERT INTO Navbar (MenuID, LinkText , ActionName , ControllerName , Icon , ParentID , ShowInMenu , IsParent , SequenceNumber) 
 	VALUES (18,'Create Transport' , 'Create' , 'Transport' , 'fa fa-bus' , 16 , 1 , 0 , 2)
 
+INSERT INTO Navbar (MenuID, LinkText , ActionName , ControllerName , Icon , ParentID , ShowInMenu , IsParent , SequenceNumber) 
+VALUES (19,'Students' , '' , '' , 'fa fa-user-circle' , NULL , 1 , 1 , 7)
+	INSERT INTO Navbar (MenuID, LinkText , ActionName , ControllerName , Icon , ParentID , ShowInMenu , IsParent , SequenceNumber) 
+	VALUES (20,'Students List' , 'Index' , 'Student' , 'fa fa-user-circle' , 19 , 1 , 0 , 1)
+	INSERT INTO Navbar (MenuID, LinkText , ActionName , ControllerName , Icon , ParentID , ShowInMenu , IsParent , SequenceNumber) 
+	VALUES (21,'Create Student' , 'Create' , 'Student' , 'fa fa-user-circle' , 19 , 1 , 0 , 2)
+
 
 -- GENDER
 

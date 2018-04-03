@@ -1,0 +1,86 @@
+﻿@model IEnumerable<aSIMS.Models.StudentModel>
+
+@{
+    ViewBag.Title = "Student List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>@ViewBag.Main<small>@ViewBag.Sub</small></h2>
+            <ul class="nav navbar-right panel_toolbox">
+                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+
+            <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(model => model.StudentName)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(model => model.RollNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Phone)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(model => model.Address)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(model => model.ParentID)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(model => model.SectionID)
+                        </td>
+                        <td>
+                            @Html.DisplayNameFor(model => model.GenderID)
+                        </td>
+                        <th style="width: 14rem;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            @Html.HiddenFor(modelItem => item.StudentID)
+                            <td>
+                                @Html.DisplayFor(modelItem => item.StudentName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RollNumber)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Phone)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Address)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ParentName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SectionName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.GenderName)
+                            </td>
+                            <td style="width: 14rem;">
+                                @Html.ActionLink("Edit", "Edit", new { id = item.StudentID }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.StudentID }) |
+                                <a href="@Url.Action("Delete", "Student", new { id = item.StudentID })" onclick="return confirm('Do you really want to DELETE this Entry')">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

@@ -121,5 +121,47 @@ namespace aSIMS.Models
                           });
         }
 
+        public static IEnumerable<SelectListItem> ToSectionSelectListItems(
+            this IEnumerable<SectionsModel> SectionID, int selectedCode)
+        {
+            return
+                SectionID.OrderBy(section => section.SectionName)
+                      .Select(section =>
+                          new SelectListItem
+                          {
+                              Selected = (section.SectionID == selectedCode),
+                              Text = section.SectionName,
+                              Value = section.SectionID.ToString()
+                          });
+        }
+
+        public static IEnumerable<SelectListItem> ToParentSelectListItems(
+            this IEnumerable<ParentModel> ParentID, int selectedCode)
+        {
+            return
+                ParentID.OrderBy(parent => parent.ParentName)
+                      .Select(parent =>
+                          new SelectListItem
+                          {
+                              Selected = (parent.ParentID == selectedCode),
+                              Text = parent.ParentName,
+                              Value = parent.ParentID.ToString()
+                          });
+        }
+
+        public static IEnumerable<SelectListItem> ToTransportSelectListItems(
+            this IEnumerable<TransportModel> TransportID, int selectedCode)
+        {
+            return
+                TransportID.OrderBy(transport => transport.TransportName)
+                      .Select(transport =>
+                          new SelectListItem
+                          {
+                              Selected = (transport.TransportID == selectedCode),
+                              Text = transport.TransportName,
+                              Value = transport.TransportID.ToString()
+                          });
+        }
+
     }
 }

@@ -196,6 +196,24 @@ namespace aSIMS {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Drop Out.
+        /// </summary>
+        public static string IsDropOut {
+            get {
+                return ResourceManager.GetString("IsDropOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pass Out.
+        /// </summary>
+        public static string IsPassOut {
+            get {
+                return ResourceManager.GetString("IsPassOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mobile.
         /// </summary>
         public static string Mobile {
@@ -210,6 +228,15 @@ namespace aSIMS {
         public static string NumberOfVehicle {
             get {
                 return ResourceManager.GetString("NumberOfVehicle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parent.
+        /// </summary>
+        public static string ParentID {
+            get {
+                return ResourceManager.GetString("ParentID", resourceCulture);
             }
         }
         
@@ -241,6 +268,15 @@ namespace aSIMS {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Photo.
+        /// </summary>
+        public static string Photo {
+            get {
+                return ResourceManager.GetString("Photo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Profession.
         /// </summary>
         public static string Profession {
@@ -268,6 +304,15 @@ namespace aSIMS {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Roll Number.
+        /// </summary>
+        public static string RollNumber {
+            get {
+                return ResourceManager.GetString("RollNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Route Area.
         /// </summary>
         public static string RouteArea {
@@ -286,11 +331,29 @@ namespace aSIMS {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Section.
+        /// </summary>
+        public static string SectionID {
+            get {
+                return ResourceManager.GetString("SectionID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Section Name.
         /// </summary>
         public static string SectionName {
             get {
                 return ResourceManager.GetString("SectionName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Student Name.
+        /// </summary>
+        public static string StudentName {
+            get {
+                return ResourceManager.GetString("StudentName", resourceCulture);
             }
         }
         
@@ -309,6 +372,15 @@ namespace aSIMS {
         public static string TeacherName {
             get {
                 return ResourceManager.GetString("TeacherName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transport.
+        /// </summary>
+        public static string TransportID {
+            get {
+                return ResourceManager.GetString("TransportID", resourceCulture);
             }
         }
         
