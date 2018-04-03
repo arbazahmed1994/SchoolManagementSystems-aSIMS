@@ -1,4 +1,5 @@
-﻿using aSIMS.Models;
+﻿using aSIMS.Common;
+using aSIMS.Models;
 using aSIMS.Repository;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Web.Mvc;
 
 namespace aSIMS.Controllers
 {
+    [SessionTimeout]
     public class TransportController : Controller
     {
         TransportRepository _rep = new TransportRepository();

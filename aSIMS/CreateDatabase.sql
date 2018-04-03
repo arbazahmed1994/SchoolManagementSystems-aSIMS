@@ -187,6 +187,7 @@ GO
 
 CREATE TABLE Students (
 	StudentID INT IDENTITY(1,1) NOT NULL,
+	EnrollmentNumber VARCHAR(50) NOT NULL,
 	StudentName VARCHAR(5) NOT NULL,
 	RollNumber VARCHAR(10) NOT NULL,
 	ParentID INT NOT NULL,

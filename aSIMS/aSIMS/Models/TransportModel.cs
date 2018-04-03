@@ -32,7 +32,7 @@ namespace aSIMS.Models
         public string DriverMobile { get; set; }
 
         [Display(Name = "RouteFare", ResourceType = typeof(LabelNaming))]
-        public float RouteFare { get; set; }
+        public double RouteFare { get; set; }
 
         [Display(Name = "RouteArea", ResourceType = typeof(LabelNaming))]
         public string RouteArea { get; set; }
