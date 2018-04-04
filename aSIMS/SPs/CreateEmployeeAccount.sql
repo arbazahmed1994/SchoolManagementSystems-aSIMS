@@ -56,7 +56,7 @@ BEGIN
 		EntryUser,
 		EntryDate )
 	VALUES (
-		'00' + (SELECT MAX(UserID) FROM EmployeeAccount),
+		(SELECT (CONVERT(VARCHAR,YEAR(GETDATE())) + '-' + RIGHT('0000' + CONVERT(VARCHAR,ISNULL(MAX(UserID),0)+1),4)) FROM EmployeeAccount),
 		@UserName,
 		@Password,
 		@FullName,
