@@ -36,23 +36,23 @@ namespace aSIMS.Controllers
             @ViewBag.Main = "Registration";
             @ViewBag.Sub = "Student";
 
-            //if (ModelState.IsValid)
-            //{
-            //    try
-            //    {
-            //        model.EntryUser = (int)Session["UserID"];
-            //        _rep.Create(model);
-            //        model = new StudentModel();
-            //        ModelState.Clear();
-            //        TempData["Message"] = "success";
-            //        TempData["SuccessMessage"] = MessageNaming.SuccessDataEntry;
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        TempData["Message"] = "error";
-            //        TempData["ErrorMessage"] = ex.Message;
-            //    }
-            //}
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    model.EntryUser = (int)Session["UserID"];
+                    _rep.Create(model);
+                    model = new StudentModel();
+                    ModelState.Clear();
+                    TempData["Message"] = "success";
+                    TempData["SuccessMessage"] = MessageNaming.SuccessDataEntry;
+                }
+                catch (Exception ex)
+                {
+                    TempData["Message"] = "error";
+                    TempData["ErrorMessage"] = ex.Message;
+                }
+            }
             model.FillData();
             return View(model);
         }
