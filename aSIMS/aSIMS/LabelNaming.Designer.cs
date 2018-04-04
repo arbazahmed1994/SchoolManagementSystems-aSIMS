@@ -358,6 +358,15 @@ namespace aSIMS {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Student Type.
+        /// </summary>
+        public static string StudentTypeID {
+            get {
+                return ResourceManager.GetString("StudentTypeID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Teacher.
         /// </summary>
         public static string TeacherID {

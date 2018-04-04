@@ -18,6 +18,13 @@ namespace aSIMS.Models
 
         public string UserCode { get; set; }
 
+        private DateTime myVar = DateTime.Now.Date;
+        public DateTime EntryDate
+        {
+            get { return myVar; }
+            set { myVar = value; }
+        }
+        
 
         // Required --
 

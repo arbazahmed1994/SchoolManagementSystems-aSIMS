@@ -26,7 +26,9 @@ namespace aSIMS.Controllers
         {
             @ViewBag.Main = "Registration";
             @ViewBag.Sub = "Student";
-            return View(new StudentModel());
+            StudentModel model = new StudentModel();
+            model.FillData();
+            return View(model);
         }
         [HttpPost]
         public ActionResult Create(StudentModel model)
@@ -34,23 +36,24 @@ namespace aSIMS.Controllers
             @ViewBag.Main = "Registration";
             @ViewBag.Sub = "Student";
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    model.EntryUser = (int)Session["UserID"];
-                    _rep.Create(model);
-                    model = new StudentModel();
-                    ModelState.Clear();
-                    TempData["Message"] = "success";
-                    TempData["SuccessMessage"] = MessageNaming.SuccessDataEntry;
-                }
-                catch (Exception ex)
-                {
-                    TempData["Message"] = "error";
-                    TempData["ErrorMessage"] = ex.Message;
-                }
-            }
+            //if (ModelState.IsValid)
+            //{
+            //    try
+            //    {
+            //        model.EntryUser = (int)Session["UserID"];
+            //        _rep.Create(model);
+            //        model = new StudentModel();
+            //        ModelState.Clear();
+            //        TempData["Message"] = "success";
+            //        TempData["SuccessMessage"] = MessageNaming.SuccessDataEntry;
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        TempData["Message"] = "error";
+            //        TempData["ErrorMessage"] = ex.Message;
+            //    }
+            //}
+            model.FillData();
             return View(model);
         }
 
@@ -60,6 +63,7 @@ namespace aSIMS.Controllers
             @ViewBag.Sub = "Student";
 
             StudentModel model = new StudentModel();
+            model.FillData();
             model = _rep.Get(id);
             return View(model);
         }
@@ -86,6 +90,7 @@ namespace aSIMS.Controllers
                     TempData["ErrorMessage"] = ex.Message;
                 }
             }
+            model.FillData();
             return View(model);
         }
 

@@ -16,6 +16,10 @@ namespace aSIMS.Models
         public string UserTypeName { get; set; }
 
 
+        public int StudentTypeID { get; set; }
+        public string StudentTypeName { get; set; }
+
+
         public int GenderID { get; set; }
         public string GenderName { get; set; }
 

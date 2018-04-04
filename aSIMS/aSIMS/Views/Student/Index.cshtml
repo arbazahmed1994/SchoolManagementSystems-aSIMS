@@ -30,16 +30,13 @@
                             @Html.DisplayNameFor(model => model.Phone)
                         </td>
                         <td>
-                            @Html.DisplayNameFor(model => model.Address)
-                        </td>
-                        <td>
                             @Html.DisplayNameFor(model => model.ParentID)
                         </td>
                         <td>
                             @Html.DisplayNameFor(model => model.SectionID)
                         </td>
                         <td>
-                            @Html.DisplayNameFor(model => model.GenderID)
+                            @Html.DisplayNameFor(model => model.StudentTypeID)
                         </td>
                         <th style="width: 14rem;">Actions</th>
                     </tr>
@@ -60,16 +57,13 @@
                                 @Html.DisplayFor(modelItem => item.Phone)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Address)
-                            </td>
-                            <td>
                                 @Html.DisplayFor(modelItem => item.ParentName)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.SectionName)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.GenderName)
+                                @Html.DisplayFor(modelItem => item.StudentTypeID)
                             </td>
                             <td style="width: 14rem;">
                                 @Html.ActionLink("Edit", "Edit", new { id = item.StudentID }) |

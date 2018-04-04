@@ -1,4 +1,5 @@
 ﻿using aSIMS.Common;
+using aSIMS.Constants;
 using aSIMS.Models;
 using Microsoft.Practices.EnterpriseLibrary.Data;
 using System;
@@ -29,7 +30,7 @@ namespace aSIMS.Repository
 
         Database db = Connection.GetDatabase();
 
-        public override string GetSPName { get { return "GetSections"; } }
+        public override string GetSPName { get { return BasicContants.StoredProcedure; } }
         public override string GetByIDSPName { get { return "GetSectionByID"; } }
         public override string GetByStringSPName { get { return string.Empty; } }
         public override string DeleteSPName { get { return "DeleteSection"; } }

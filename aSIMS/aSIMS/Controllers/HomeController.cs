@@ -1,5 +1,6 @@
 ﻿using aSIMS.Common;
 using aSIMS.Constants;
+using aSIMS.Models;
 using aSIMS.Repository;
 using aSIMS.ViewModel;
 using System;
@@ -58,6 +59,14 @@ namespace aSIMS.Controllers
         public ActionResult Unauthorized()
         {
             return View();
+        }
+
+        [SessionTimeout]
+        public ActionResult Profile()
+        {
+            EmployeeAccountModel model = new EmployeeAccountModel();
+            model = _rep.GetProfile((int)Session["UserID"]);
+            return View(model);
         }
 
         public ActionResult Logout()

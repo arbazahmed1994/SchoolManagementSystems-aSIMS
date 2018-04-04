@@ -82,6 +82,12 @@ INSERT INTO Designation VALUES ('Accountant')
 INSERT INTO UserType VALUES ('Teacher')
 INSERT INTO UserType VALUES ('Administrator')
 
+-- STUDENT TYPE
+
+INSERT INTO StudentType VALUES ('Basic (1-8)')
+INSERT INTO StudentType VALUES ('Matriculation System')
+INSERT INTO StudentType VALUES ('Cambridge System')
+
 -- GROUP SECTION
 
 INSERT INTO GroupSection VALUES ('Kindergarden')

@@ -31,7 +31,7 @@
             <div class="col-md-3 left_col menu_fixed">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><i class="fa fa-mortar-board" style="border:none;font-size: 28px;"></i><span> &nbsp a S I M S</span></a>
+                        <a href="@Url.Action("Index","Home")" class="site_title"><i class="fa fa-mortar-board" style="border:none;font-size: 28px;"></i><span> &nbsp a S I M S</span></a>
                     </div>
 
                     <div class="clearfix"></div>
@@ -155,6 +155,8 @@
                 document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
             }
         })
+
+        $('#Photo').clone().attr('type', 'file').insertAfter('#Photo').prev().remove();
     </script>
 
 </body>

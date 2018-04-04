@@ -1,4 +1,5 @@
 ﻿using aSIMS.Common;
+using aSIMS.Constants;
 using aSIMS.Models;
 using aSIMS.Repository;
 using System;
@@ -113,6 +114,7 @@ namespace aSIMS.Controllers
         {
             @ViewBag.Main = "List";
             @ViewBag.Sub = "Sections";
+            BasicContants.StoredProcedure = "GetSections";
             IEnumerable<SectionsModel> model = _sectionRep.Get();
             return View(model);
         }

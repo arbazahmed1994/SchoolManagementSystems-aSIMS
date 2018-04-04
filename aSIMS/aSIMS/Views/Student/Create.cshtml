@@ -76,7 +76,7 @@
                             @Html.LabelFor(model => model.ParentID)
                         </div>
                         <div class="editor-field">
-                            @Html.DropDownListFor(model => model.ParentID, Model.ParentList)
+                                @Html.DropDownListFor(model => model.ParentID, Model.ParentList)
                             @Html.ValidationMessageFor(model => model.ParentID)
                         </div>
 
@@ -110,6 +110,14 @@
                         <div class="editor-field">
                             @Html.EditorFor(model => model.Photo)
                             @Html.ValidationMessageFor(model => model.Photo)
+                        </div>
+
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.StudentTypeID)
+                        </div>
+                        <div class="editor-field">
+                            @Html.DropDownListFor(model => model.StudentTypeID, Model.StudentList)
+                            @Html.ValidationMessageFor(model => model.StudentTypeID)
                         </div>
 
                         <div class="form-group" align="right">

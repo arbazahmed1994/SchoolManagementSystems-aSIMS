@@ -65,6 +65,20 @@ namespace aSIMS.Models
                           });
         }
 
+        public static IEnumerable<SelectListItem> ToStudentTypeSelectListItems(
+            this IEnumerable<BasicModel> StudentTypeID, int selectedCode)
+        {
+            return
+                StudentTypeID.OrderBy(studentType => studentType.StudentTypeName)
+                      .Select(studentType =>
+                          new SelectListItem
+                          {
+                              Selected = (studentType.StudentTypeID == selectedCode),
+                              Text = studentType.StudentTypeName,
+                              Value = studentType.StudentTypeID.ToString()
+                          });
+        }
+
         public static IEnumerable<SelectListItem> ToDesignationSelectListItems(
             this IEnumerable<BasicModel> DesignationID, int selectedCode)
         {

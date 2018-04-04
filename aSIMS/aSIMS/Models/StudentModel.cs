@@ -49,6 +49,7 @@ namespace aSIMS.Models
         public string Phone { get; set; }
 
         [Required]
+        [DataType(DataType.EmailAddress)]
         [Display(Name = "EmailAddress", ResourceType = typeof(LabelNaming))]
         public string Email { get; set; }
 
@@ -56,8 +57,7 @@ namespace aSIMS.Models
         [Display(Name = "Address", ResourceType = typeof(LabelNaming))]
         public string Address { get; set; }
 
-        [Required]
-        [DataType(DataType.ImageUrl)]
+        [DataType(DataType.Url)]
         [Display(Name = "Photo", ResourceType = typeof(LabelNaming))]
         public string Photo { get; set; }
 
@@ -118,15 +118,31 @@ namespace aSIMS.Models
             set { _transportID = value; }
         }
 
+        public IEnumerable<BasicModel> Students { get; set; }
+        public IEnumerable<SelectListItem> StudentList { get; set; }
+        private int _studentTypeID = 0;
+        [Required]
+        [Display(Name = "StudentTypeID", ResourceType = typeof(LabelNaming))]
+        public int StudentTypeID
+        {
+            get { return _studentTypeID; }
+            set { _studentTypeID = value; }
+        }
 
-        public StudentModel()
+
+        public void FillData()
         {
             BasicRepository _basic = new BasicRepository();
             BasicContants.StoredProcedure = "GetGender";
             Genders = _basic.Get();
             GenderList = Genders.ToGenderSelectListItems(GenderID);
 
+            BasicContants.StoredProcedure = "GetStudentType";
+            Students = _basic.Get();
+            StudentList = Students.ToStudentTypeSelectListItems(StudentTypeID);
+
             SectionsRepository _section = new SectionsRepository();
+            BasicContants.StoredProcedure = "GetFullSectionName";
             Sections = _section.Get();
             SectionList = Sections.ToSectionSelectListItems(SectionID);
 

@@ -43,3 +43,7 @@
     .create-full-notification > p {
         color: #0d7fb3;
     }
+
+.user-profile-icon {
+    width: 22px;
+}
